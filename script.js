@@ -8,7 +8,7 @@ const displayFotoPokemon = document.querySelector(".foto");
 
 function getPokemon() {
   const pokemonPromisses = [];
-  for (let i = 1; i <= 150; i++) {
+  for (let i = 1; i <= 600; i++) {
     pokemonPromisses.push(
       fetch(`https://pokeapi.co/api/v2/pokemon/${i}`).then((response) =>
         response.json()
@@ -17,7 +17,7 @@ function getPokemon() {
   }
 
   Promise.all(pokemonPromisses).then((pokemons) => {
-    // console.log(pokemons)
+  
     pokemons.map((pokemon) => {
       const newPokemon = document.createElement("ul");
       const namePokemon = document.createElement("h3");
@@ -32,62 +32,7 @@ function getPokemon() {
 
       listadePokemons.appendChild(newPokemon);
     
-      // switch (pokemon.types[0].type.name) {
-      //   case "fire":
-      //     pokemonInfo.style.backgroundColor = "red";
-      //     break;
-      //   case "water":
-      //     pokemonInfo.style.backgroundColor = "blue";
-      //     break;
-      //   case "grass":
-      //     pokemonInfo.style.backgroundColor = "red";
-      //     break;
-      //   case "bug":
-      //     pokemonInfo.style.backgroundColor = "red";
-      //     break;
-      //   case "ghost":
-      //     pokemonInfo.style.backgroundColor = "red";
-      //     break;
-      //   case "psychic":
-      //     pokemonInfo.style.backgroundColor = "red";
-      //     break;
-      //   case "ground":
-      //     pokemonInfo.style.backgroundColor = "red";
-      //     break;
-      //   case "electric":
-      //     pokemonInfo.style.backgroundColor = "red";
-      //     break;
-      //   case "normal":
-      //     pokemonInfo.style.backgroundColor = "red";
-      //     break;
-      //   case "poison":
-      //     pokemonInfo.style.backgroundColor = "red";
-      //     break;
-      //   case "fairy":
-      //     pokemonInfo.style.backgroundColor = "red";
-      //     break;
-      //   case "rock":
-      //     pokemonInfo.style.backgroundColor = "red";
-      //     break;
-      //   case "fighting":
-      //     pokemonInfo.style.backgroundColor = "red";
-      //     break;
-      //   case "ice":
-      //     pokemonInfo.style.backgroundColor = "red";
-      //     break;
-      //   case "dragon":
-      //     pokemonInfo.style.backgroundColor = "red";
-      //     break;
-      //   case "steel":
-      //     pokemonInfo.style.backgroundColor = "red";
-      //     break;
-      //   case "dark":
-      //     pokemonInfo.style.backgroundColor = "red";
-      //     break;
-
-      //   default:
-      //     break;
-      // }
+     
   
 
       newPokemon.addEventListener("click", () => {
@@ -95,7 +40,7 @@ function getPokemon() {
         displayMovesPokemon.innerHTML = "";
         displayTiposPokemon.innerHTML = "";
         displaystatsPokemon.innerHTML = "";
-        console.log(pokemon);
+    
         displayNomePokemon.innerHTML = pokemon.name.toUpperCase();
 
         displayFotoPokemon.src = pokemon.sprites.other.home.front_default;
@@ -115,7 +60,62 @@ function getPokemon() {
           novoType.innerHTML = type.type.name.toUpperCase();
           displayTiposPokemon.appendChild(novoType);
         });
-    
+        switch (pokemon.types[0].type.name) {
+          case "fire":
+            pokemonInfo.style.backgroundColor = "red";
+            break;
+          case "water":
+            pokemonInfo.style.backgroundColor  = ' #65f2ff'
+            break;
+          case "grass":
+            pokemonInfo.style.backgroundColor = "rgb(36,255,81)";
+            break;
+          case "bug":
+            pokemonInfo.style.backgroundColor = "#cb0547";
+            break;
+          case "ghost":
+            pokemonInfo.style.backgroundColor = "#5205cb";
+            break;
+          case "psychic":
+            pokemonInfo.style.backgroundColor = "#cbc305";
+            break;
+          case "ground":
+            pokemonInfo.style.backgroundColor = "#cb9105";
+            break;
+          case "electric":
+            pokemonInfo.style.backgroundColor = "#fffb00";
+            break;
+          case "normal":
+            pokemonInfo.style.backgroundColor = "#dbdbdb";
+            break;
+          case "poison":
+            pokemonInfo.style.backgroundColor = "#ca00ff";
+            break;
+          case "fairy":
+            pokemonInfo.style.backgroundColor = "#ffa0d8";
+            break;
+          case "rock":
+            pokemonInfo.style.backgroundColor = "#a8a8a8";
+            break;
+          case "fighting":
+            pokemonInfo.style.backgroundColor = "#83a4a7";
+            break;
+          case "ice":
+            pokemonInfo.style.backgroundColor = "#c9faff";
+            break;
+          case "dragon":
+            pokemonInfo.style.backgroundColor = "#9da4ff";
+            break;
+          case "steel":
+            pokemonInfo.style.backgroundColor = "#aaaaaa";
+            break;
+          case "dark":
+            pokemonInfo.style.backgroundColor = "#424242";
+            break;
+  
+          default:
+            break;
+        }
       });
     });
   });
