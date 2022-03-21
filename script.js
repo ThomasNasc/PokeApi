@@ -5,6 +5,9 @@ const displaystatsPokemon = document.querySelector(".stats");
 const displayMovesPokemon = document.querySelector(".moves");
 const displayTiposPokemon = document.querySelector(".type");
 const displayFotoPokemon = document.querySelector(".foto");
+const design3D = document.querySelector(".ThreeD");
+const design2D = document.querySelector(".TwoD");
+
 
 function getPokemon() {
   const pokemonPromisses = [];
@@ -22,17 +25,22 @@ function getPokemon() {
       const newPokemon = document.createElement("ul");
       const namePokemon = document.createElement("h3");
       const fotoPokemon = document.createElement("img");
-      const idPokemon = document.createElement("li");
-
+      const idPokemon = document.createElement("li")
+      var pokemonImgDesign = pokemon.sprites.other.home.front_default
       namePokemon.innerHTML = pokemon.name.toUpperCase();
-      fotoPokemon.src = pokemon.sprites.front_default;
+      fotoPokemon.src = pokemon.sprites.other.home.front_default
       idPokemon.innerHTML = pokemon.id;
       newPokemon.appendChild(namePokemon);
       newPokemon.appendChild(fotoPokemon);
 
       listadePokemons.appendChild(newPokemon);
     
-     
+     design2D.addEventListener("click",()=>{
+       fotoPokemon.src =  pokemon.sprites.front_default;
+     })
+     design3D.addEventListener("click",()=>{
+      fotoPokemon.src =  pokemon.sprites.other.home.front_default
+    })
   
 
       newPokemon.addEventListener("click", () => {
@@ -40,10 +48,20 @@ function getPokemon() {
         displayMovesPokemon.innerHTML = "";
         displayTiposPokemon.innerHTML = "";
         displaystatsPokemon.innerHTML = "";
-    
+    console.log(pokemon)
         displayNomePokemon.innerHTML = pokemon.name.toUpperCase();
 
-        displayFotoPokemon.src = pokemon.sprites.other.home.front_default;
+      
+        displayFotoPokemon.src = pokemonImgDesign
+        design2D.addEventListener("click",()=>{
+          displayFotoPokemon.src =  pokemon.sprites.front_default;
+          pokemonImgDesign = pokemon.sprites.front_default;
+        })
+        design3D.addEventListener("click",()=>{
+          displayFotoPokemon.src =  pokemon.sprites.other.home.front_default
+         pokemonImgDesign = pokemon.sprites.other.home.front_default
+       })
+
 
         pokemon.moves.map((move) => {
           var novoMovimento = document.createElement("li");

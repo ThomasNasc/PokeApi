@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PokeDex</title>
     <link rel="stylesheet" href="./estilo.css">
 </head>
 
@@ -14,19 +14,25 @@
 <img class="pokebola"src="./743977.png" alt="">
     <h1>POKEDEX</h1>
 </header>
-    <div class="listaDePokemons">
+<div class="listaDePokemons">
+</div>
+<div class="infoPokemon">
+    <h1 class="nome"></h1>
+    <img class="foto" src="" alt="">
+    <h2>BASE STATS</h2>
+    <ul class="stats"></ul>
+    <h2>ABILITIES</h2>
+    <ul class="moves"></ul>
+    <h2>TYPE</h2>
+    <ul class="type"></ul>
+    <button onclick="fechaInfo()"class="close">x</button>
+    
+</div>
+<div class="container-button">
 
-    </div>
-    <div class="infoPokemon">
-        <h1 class="nome"></h1>
-        <img class="foto" src="" alt="">
-        <ul class="stats"></ul>
-        <h2>Habilidades</h2>
-        <ul class="moves"></ul>
-        <h2>Tipo</h2>
-        <ul class="type"></ul>
-        <button onclick="fechaInfo()"class="close">x</button>
-    </div>
+<button class="ThreeD button">3D</button>
+<button class="TwoD button">2D</button>
+</div>
 
     <script src="./script.js"></script>
 </body>
