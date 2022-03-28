@@ -7,7 +7,6 @@ const displayTiposPokemon = document.querySelector(".type");
 const displayFotoPokemon = document.querySelector(".foto");
 const design3D = document.querySelector(".ThreeD");
 const design2D = document.querySelector(".TwoD");
-var test = prompt()
 function getPokemon() {
   const pokemonPromisses = [];
   for (let i = 1; i <= 150; i++) {
@@ -20,7 +19,7 @@ function getPokemon() {
 
   Promise.all(pokemonPromisses).then((pokemons) => {
 
-      console.log(filtrado)
+     
     pokemons.map((pokemon) => {
       const newPokemon = document.createElement("ul");
       const namePokemon = document.createElement("h3");
@@ -47,7 +46,7 @@ function getPokemon() {
         displayMovesPokemon.innerHTML = "";
         displayTiposPokemon.innerHTML = "";
         displaystatsPokemon.innerHTML = "";
-        console.log(pokemon);
+       
         displayNomePokemon.innerHTML = pokemon.name.toUpperCase();
 
         displayFotoPokemon.src = pokemonImgDesign;
