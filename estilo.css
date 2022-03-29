@@ -86,22 +86,148 @@ header h1 {
   border: 3px solid black;
 }
 
+.close {
+  position: absolute;
+  top: 10px;
+  right: 1vw;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 40px;
+}
+.moves li::first-letter {
+  text-transform: capitalize;
+}
+
+@media screen and (max-width: 900px) {
+  .listaDePokemons ul:hover {
+    animation: girar 1s linear;
+    border-radius: 50%;
+  }
+  @keyframes girar {
+    from {
+      transform: rotatey(0deg);
+    }
+    to {
+      transform: rotatey(360deg);
+    }
+  }
+}
+.container-button {
+  border: 2px solid black;
+  background-color: rgb(255, 0, 0);
+  padding: 4px;
+  border-radius: 10px;
+  position: fixed;
+  bottom: 20px;
+  left: -110px;
+  color: white;
+  height: 35px;
+  font-family: sans-serif;
+  font-size: 10px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  transition: 1s;
+  z-index: 3;
+}
+.button {
+  width: 50px;
+
+  height: 25px;
+  border: 3px solid black;
+  border-radius: 10px;
+  background-color: #30475e;
+  box-shadow: 10px;
+  color: white;
+}
+.checkbox-container {
+  display: none;
+}
+.button-ative {
+  font-size: 20px;
+  width: 50px;
+}
+.checkbox-container:checked ~ .container-button {
+  left: 0px;
+}
+
+@keyframes opacidade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.verMais{
+  width: 20%;
+  min-width: 200px;
+  height: 50px;
+border-radius: 10px;
+position: relative;
+left: 50%;
+transform: translate(-50%);
+background-color: rgb(224, 224, 224);
+font-weight: 1000;
+color: rgb(0, 0, 0);
+display: flex;
+justify-content: center;
+align-items: center;
+border: 3PX solid rgb(0, 0, 0);
+margin-top: 20px;
+margin-bottom: 70px;
+box-shadow: 0px 2px 3px 3px black;
+}
+.verMais:hover{
+  background-color: rgb(168, 168, 168);
+  color: rgb(0, 0, 0);
+  border: 3px solid rgb(0, 0, 0);
+}
+.verMais:focus{
+  background-color: black;
+  color: white;
+  border: 3px solid white;
+}
+/* INFOPOKEMON */
 .infoPokemon .moves {
   min-height: 50px;
-  border-radius: 10px;
-  margin: 5px;
+  border-radius: 0px 0px 10px 10px;
+
   overflow-y: scroll;
-  width: 200px;
+  width: 60%;
+  min-width: 200px;
   color: black;
   font-size: 15px;
   text-align: center;
-  background-color: #e2e2e2d5;
+  background-color: #e2e2e23d;
   padding-top: 7px;
   padding-left: 10px;
-  border: 2px solid #000000c9;
-  box-shadow: 0px 0px 10px black;
+  border: 1px solid rgba(0, 0, 0, 0.075);
+  margin-bottom: 2%;
   max-height: 100px;
   height: 30%;
+}
+.stats {
+  padding-top: 7px;
+  width: 60%;
+  min-width: 200px;
+
+  padding-left: 10px;
+
+  text-align: center;
+  padding: 5px;
+  border-radius: 10px;
+  list-style: none;
+  margin-top: 2%;
+  min-height: 50px;
+  max-height: 120px;
+  height: 30%;
+  overflow-y: scroll;
+  font-weight: 700;
+  margin-bottom: 2%;
 }
 
 .infoPokemon {
@@ -122,7 +248,7 @@ header h1 {
   animation: opacidade 1s linear;
 }
 .titulos {
-  height: 50%;
+  height: 40%;
   width: 100%;
   display: flex;
   align-items: center;
@@ -131,26 +257,33 @@ header h1 {
 }
 .status {
   width: 100%;
+  max-width: 700px;
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 50%;
+  height: 60%;
 }
 .infoPokemon .foto {
-  width: 70%;
-  max-width: 200px;
-  background-color: #ffffffce;
+  height: 70%;
+  max-height: 200px;
+  background-color: #5050502c;
   border-radius: 30px;
   margin: 5px;
   padding: 10px;
   border: 2px solid #000000c9;
   box-shadow: 0px 0px 10px black;
 }
-.infoPokemon h2 {
-  margin: 1vw;
-  font-size: 20px;
+.infoPokemon .titulo {
+  font-size: 15px;
   text-shadow: -1px 1px 0 rgb(255, 255, 255), 1px 1px 0 rgb(255, 255, 255),
     1px -1px 0 rgb(255, 255, 255), -1px -1px 0 rgb(255, 255, 255);
+  border: 2px solid rgba(128, 128, 128, 0.466);
+  min-width: 200px;
+  width: 60%;
+  height: 30px;
+  text-align: center;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.288);
 }
 .infoPokemon .type {
   display: flex;
@@ -160,18 +293,38 @@ header h1 {
   list-style: none;
 }
 .infoPokemon .type li {
-  font-size: 10px;
-  border: 2px solid #ffffffc9;
+  font-weight: 1000;
+  font-size: 15px;
+  border: 2px solid #c4c4c4c9;
+  box-shadow: 1px 1px 1px 1px black;
   padding: 5px;
-  margin: 2px;
-  height: 30px;
-  color: rgb(0, 0, 0);
-  width: 70px;
+  margin: 2%;
+  height: 35px;
+  color: rgba(255, 255, 255, 0.877);
+  text-shadow: -1px 1px 0 rgba(0, 0, 0, 0.541), 1px 1px 0 rgba(0, 0, 0, 0.521),
+    1px -1px 0 rgba(0, 0, 0, 0.479), -1px -1px 0 rgba(0, 0, 0, 0.486);
+  width: 100px;
   border-radius: 20px;
   text-align: center;
-
+  justify-content: center;
+  align-items: center;
 }
-
+.titulo-status {
+  border-radius: 10px;
+}
+.titulo-moves {
+  border-radius: 10px 10px 0px 0px;
+}
+.titulo-tipo {
+  border-radius: 10px;
+  margin-bottom: 2%;
+}
+.nome {
+  text-align: center;
+  font-size: 35px;
+  text-shadow: -1px 1px 0 rgb(255, 255, 255), 1px 1px 0 rgb(255, 255, 255),
+    1px -1px 0 rgb(255, 255, 255), -1px -1px 0 rgb(255, 255, 255);
+}
 .infoPokemon::-webkit-scrollbar {
   width: 10px;
 }
@@ -182,125 +335,25 @@ header h1 {
   width: 10px;
 }
 .infoPokemon .moves::-webkit-scrollbar-track {
-  background-color: rgba(128, 128, 128, 0.281);
+  background-color: rgba(128, 128, 128, 0);
   border-radius: 0px 10px 10px 0px;
 }
 .infoPokemon .moves::-webkit-scrollbar-thumb {
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.432);
   border-radius: 10px;
 }
 .infoPokemon .stats::-webkit-scrollbar {
   width: 10px;
 }
 .infoPokemon .stats::-webkit-scrollbar-track {
-  background-color: rgba(128, 128, 128, 0.281);
+  background-color: rgba(255, 255, 255, 0);
   border-radius: 0px 10px 10px 0px;
 }
 .infoPokemon .stats::-webkit-scrollbar-thumb {
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.432);
   border-radius: 10px;
 }
-.close {
-  position: absolute;
-  top: 10px;
-  right: 1vw;
-  width: 40px;
-  height: 40px;
-  background-color: transparent;
-  border: none;
-  color: white;
-  font-size: 40px;
-}
-.moves li::first-letter {
-  text-transform: capitalize;
-}
-
-.nome {
-  text-align: center;
-  font-size: 20px;
-  text-shadow: -1px 1px 0 rgb(255, 255, 255), 1px 1px 0 rgb(255, 255, 255),
-    1px -1px 0 rgb(255, 255, 255), -1px -1px 0 rgb(255, 255, 255);
-}
-@media screen and (max-width: 900px) {
-.listaDePokemons ul:hover {
-  animation: girar 1s linear;
-  border-radius: 50%;
-}
-@keyframes girar{
-  from {
-    transform: rotatey(0deg);
-  }
-  to {
-    transform: rotatey(360deg);
-  }
-}
-}
-.container-button {
-  border: 2px solid black;
-  background-color: rgb(255, 0, 0);
-  padding: 4px;
-  border-radius: 10px;
-  position: fixed;
-  bottom: 20px;
-  left: -110px;
-  color: white;
-  height: 35px;
-  font-family: sans-serif;
-  font-size: 10px;
-  display: flex;
-  text-align: center;
-  transition: 1s;
-  z-index: 3;
-}
-.button {
-  width: 50px;
-
-  height: 25px;
-  border: 3px solid black;
-  border-radius: 10px;
-  background-color: #30475e;
-  box-shadow: 10px;
-  color: white;
-}
-.checkbox-container {
-  display: none;
-}
-.button-ative {
-  font-size: 25px;
-  width: 50px;
-}
-.checkbox-container:checked ~ .container-button {
-  left: 0px;
-}
-
-.stats {
-  background-color: #e2e2e2d5;
-  padding-top: 7px;
-  width: 200px;
-  font-size: 10xp;
-  padding-left: 10px;
-  border: 1px solid #000000c9;
-  text-align: center;
-  padding: 5px;
-  border-radius: 10px;
-  list-style: none;
-  box-shadow: 0px 0px 10px black;
-  min-height: 50px;
-  overflow-y: scroll;
-  height: 30%;
-  max-height: 150px;
-}
-
-@keyframes opacidade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 950px) {
   body {
     max-width: 1400px;
     margin-left: auto;
@@ -328,13 +381,14 @@ header h1 {
     transform: scale(1.2);
   }
   .infoPokemon {
-    top: 80px;
-    left: 50%;
-    transform: translate(-50%);
-   
+    top: 15%;
+    left: 50% !important;
+    transform: translate(-50%) !important;
+    max-height: 600px;
+    max-width: 700px;
     justify-content: space-around;
     height: 80%;
-    width: 700px;
+    width: 60%;
     border-radius: 30px;
     flex-direction: row;
   }
@@ -366,18 +420,15 @@ header h1 {
     align-items: center;
     height: 100%;
     /* justify-content: space-around; */
-
   }
   .infoPokemon .foto {
-    width: 70%;
-    
+    height: 50%;
 
-    max-width: none;
+    max-height: 250px;
   }
   .nome {
     height: 10%;
     font-size: 40px;
-
-
+    margin-bottom: 30px;
   }
 }

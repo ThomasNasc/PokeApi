@@ -10,35 +10,40 @@
 </head>
 
 <body>
+    
     <header>
 <img class="pokebola"src="./743977.png" alt="">
     <h1>POKEDEX</h1>
 </header>
+
 <div class="listaDePokemons">
 </div>
+<button  class="verMais"onclick="vermais()">SEE MORE</button>
+
 <div class="infoPokemon">
     <div class="titulos">
     <h1 class="nome"></h1>
     <img class="foto" src="" alt="">
 </div>
     <div class="status">
-    <h2>BASE STATS</h2>
+    <h2 class="titulo-status titulo ">BASE STATS</h2>
     <ul class="stats"></ul>
-    <h2>ABILITIES</h2>
+    <h2 class="titulo-moves titulo">ABILITIES</h2>
     <ul class="moves"></ul>
-    <h2>TYPE</h2>
+    <h3 class="titulo-tipo titulo" >TYPE</h2>
     <ul class="type"></ul>
     <button onclick="fechaInfo()"class="close">x</button>
+
 </div>
 </div>
 <input  id="ative-button" class="checkbox-container" type="checkbox" >
 <div  id="container-button" class="container-button">
     <button  class="ThreeD button">3D</button>
     <button class="TwoD button">2D</button>
-    <label class="button-ative"for="ative-button">></label>
+    <label class="button-ative"for="ative-button"><i class="fa-solid fa-filter"></i></i></label>
    
 </div>
-
+<script src="https://kit.fontawesome.com/dce44c9db2.js" crossorigin="anonymous"></script>
     <script src="./script.js"></script>
 </body>
 
