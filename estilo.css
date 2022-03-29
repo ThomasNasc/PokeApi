@@ -221,8 +221,19 @@ header h1 {
   text-shadow: -1px 1px 0 rgb(255, 255, 255), 1px 1px 0 rgb(255, 255, 255),
     1px -1px 0 rgb(255, 255, 255), -1px -1px 0 rgb(255, 255, 255);
 }
+@media screen and (max-width: 900px) {
 .listaDePokemons ul:hover {
-  transform: scale(1.2);
+  animation: girar 1s linear;
+  border-radius: 50%;
+}
+@keyframes girar{
+  from {
+    transform: rotatey(0deg);
+  }
+  to {
+    transform: rotatey(360deg);
+  }
+}
 }
 .container-button {
   border: 2px solid black;
@@ -313,11 +324,14 @@ header h1 {
     margin-bottom: 20px;
   }
 
+  .listaDePokemons ul:hover {
+    transform: scale(1.2);
+  }
   .infoPokemon {
     top: 80px;
     left: 50%;
     transform: translate(-50%);
-    display: flex;
+   
     justify-content: space-around;
     height: 80%;
     width: 700px;
