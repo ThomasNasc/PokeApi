@@ -61,7 +61,7 @@ function getPokemon() {
         selectColor(pokemon.types[0].type.name,pokemonInfo)
         pokemon.moves.map((move) => {
           var novoMovimento = document.createElement("li");
-          novoMovimento.innerHTML = move.move.name;
+          novoMovimento.innerHTML = move.move.name.toUpperCase();
           displayMovesPokemon.appendChild(novoMovimento);
         });
         pokemon.stats.map((stat) => {
